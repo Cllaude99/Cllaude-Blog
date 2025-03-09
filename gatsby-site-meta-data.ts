@@ -48,12 +48,12 @@ export default {
       category: 'featured-Dev',
     },
     {
-      title: '회고',
-      category: 'featured-회고',
-    },
-    {
       title: 'Experience',
       category: 'featured-Experience',
+    },
+    {
+      title: '회고',
+      category: 'featured-회고',
     },
   ],
 
