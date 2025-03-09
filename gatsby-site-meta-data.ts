@@ -6,7 +6,7 @@ export default {
   description: `개발자 태윤`,
   language: `ko`,
   siteUrl: `https://Cllaude.com/`,
-  ogImage: `/profile-image.jpeg`,
+  ogImage: `profile-image.jpeg`,
 
   /**
    * comments setting
@@ -89,14 +89,40 @@ export default {
    */
   projects: [
     {
-      title: 'Portfolio',
-      description: '포트폴리오',
-      techStack: ['React', 'Next.js', 'Typescript'],
-      thumbnailUrl: '', // Path to your in the 'assets' folder
+      title: 'Syncspot',
+      description: '모임의 중간 지점을 찾아주는 서비스',
+      techStack: ['React', 'TS'],
+      thumbnailUrl: 'syncspot.png', // Path to your in the 'assets' folder
       links: {
         post: '',
-        github: '',
-        demo: '',
+        github: 'https://github.com/Cotato-Syncspot/Syncspot-FE',
+        demo: 'https://syncspot.kr/',
+        googlePlay: '',
+        appStore: '',
+      },
+    },
+    {
+      title: 'Pinoco',
+      description: '실시간으로 즐기는 라이어 게임',
+      techStack: ['React', 'TS'],
+      thumbnailUrl: 'pinoco.png', // Path to your in the 'assets' folder
+      links: {
+        post: '',
+        github: 'https://github.com/boostcampwm-2024/web23-Pinoco',
+        demo: 'https://pinoco.site/',
+        googlePlay: '',
+        appStore: '',
+      },
+    },
+    {
+      title: 'Cotato FE Networking',
+      description: 'IT 동아리 프론트엔드 네트워킹 사이트',
+      techStack: ['Next.js', 'TS'],
+      thumbnailUrl: 'cotato-fe-networking.png', // Path to your in the 'assets' folder
+      links: {
+        post: '',
+        github: 'https://github.com/Cllaude99/Cotato-FE-Networking',
+        demo: 'https://cotato-fe-networking-kimtaeyoons-projects.vercel.app/',
         googlePlay: '',
         appStore: '',
       },

@@ -39,10 +39,10 @@ const Header: React.FC<HeaderProps> = ({ title, location }) => {
             about
           </S.MenuLink>
           <S.MenuLink
-            to="/playground"
-            isselected={(pathname === '/playground').toString()}
+            to="/projects"
+            isselected={(pathname === '/projects').toString()}
           >
-            playground
+            projects
           </S.MenuLink>
         </S.Menu>
       </S.Header>
