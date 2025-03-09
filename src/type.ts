@@ -43,7 +43,7 @@ export type Author = {
   stack: string[];
   bio: Bio;
   social: Social;
-  dropdown: Record<string, string>;
+  dropdown: SiteMetadataAuthorDropdown;
 };
 
 export type Bio = {
@@ -67,7 +67,11 @@ export type Post = {
 };
 
 export type AllMarkdownRemark = {
-  edges: { node: MarkdownRemark; next: { fields: Fields }; previous: { fields: Fields } }[];
+  edges: {
+    node: MarkdownRemark;
+    next: { fields: Fields };
+    previous: { fields: Fields };
+  }[];
 };
 
 export type MarkdownRemark = {
@@ -88,4 +92,8 @@ export type Frontmatter = {
 
 export type Fields = {
   slug: string;
+};
+
+export type SiteMetadataAuthorDropdown = {
+  velog?: string;
 };

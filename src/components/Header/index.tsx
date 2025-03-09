@@ -14,28 +14,34 @@ const Header: React.FC<HeaderProps> = ({ title, location }) => {
     <S.Wrapper>
       <S.Header>
         <div>
-          <div className='pc-only'>
-            <S.MenuLink to='/' isselected='false'>
+          <div className="pc-only">
+            <S.MenuLink to="/" isselected="false">
               {title}
             </S.MenuLink>
           </div>
-          <div className='mobile-only mobile-logo'>
-            <S.MenuLink to='/' isselected='false'>
+          <div className="mobile-only mobile-logo">
+            <S.MenuLink to="/" isselected="false">
               D
             </S.MenuLink>
           </div>
         </div>
         <S.Menu>
-          <S.MenuLink to='/posts' isselected={pathname.includes('/posts').toString()}>
+          <S.MenuLink
+            to="/posts"
+            isselected={pathname.includes('/posts').toString()}
+          >
             posts
           </S.MenuLink>
-          <S.MenuLink to='/about' isselected={(pathname === '/about').toString()}>
+          <S.MenuLink
+            to="/about"
+            isselected={(pathname === '/about').toString()}
+          >
             about
           </S.MenuLink>
-          <S.MenuLink to='/guestbook' isselected={(pathname === '/guestbook').toString()}>
-            guestbook
-          </S.MenuLink>
-          <S.MenuLink to='/playground' isselected={(pathname === '/playground').toString()}>
+          <S.MenuLink
+            to="/playground"
+            isselected={(pathname === '/playground').toString()}
+          >
             playground
           </S.MenuLink>
         </S.Menu>

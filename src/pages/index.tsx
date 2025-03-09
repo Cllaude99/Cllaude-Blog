@@ -17,23 +17,31 @@ type HomeProps = {
 };
 
 const Home: React.FC<HomeProps> = ({ location, data }) => {
-  const posts = data.allMarkdownRemark.edges.map(({ node }) => new PostClass(node));
+  const posts = data.allMarkdownRemark.edges.map(
+    ({ node }) => new PostClass(node)
+  );
 
   const { author, featured } = data.site.siteMetadata;
 
   const recentPosts = posts.slice(0, 3);
 
   const featuredPosts = featured.map(({ title, category }) => {
-    const filteredPosts = posts.filter((post) => post.categories.find((c) => c === category));
+    const filteredPosts = posts.filter((post) =>
+      post.categories.find((c) => c === category)
+    );
     return { title, posts: filteredPosts };
   });
 
   return (
     <Layout location={location}>
-      <Seo title='개발자 태윤' />
+      <Seo title="개발자 태윤" />
       <MainBanner author={author} />
 
-      <FeaturedPostColumn title='Recent Posts' posts={recentPosts} fill={false} />
+      <FeaturedPostColumn
+        title="Recent Posts"
+        posts={recentPosts}
+        fill={false}
+      />
 
       {featuredPosts.map(({ title, posts }, i) => (
         <FeaturedPostColumn key={i} title={title} posts={posts} />
@@ -84,7 +92,6 @@ export const pageQuery = graphql`
           }
           dropdown {
             velog
-            tistory
           }
         }
         featured {

@@ -158,6 +158,7 @@ export const Qr = styled.div`
     }
     & > img:last-child {
       width: 100px;
+      background-color: white;
     }
   }
 `;
