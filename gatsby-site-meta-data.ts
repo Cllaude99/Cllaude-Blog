@@ -44,12 +44,16 @@ export default {
    */
   featured: [
     {
-      title: 'category1',
-      category: 'featured-category1',
+      title: 'Dev',
+      category: 'featured-Dev',
     },
     {
-      title: 'category2',
-      category: 'featured-category2',
+      title: '회고',
+      category: 'featured-회고',
+    },
+    {
+      title: 'Experience',
+      category: 'featured-Experience',
     },
   ],
 
@@ -60,7 +64,7 @@ export default {
     {
       category: 'Career',
       date: '2024.08.11 - 2024.11.11',
-      en: 'Daangn.',
+      en: 'Daangn',
       kr: '당근(인턴)',
       info: 'SummerTech Internship',
       link: '',
