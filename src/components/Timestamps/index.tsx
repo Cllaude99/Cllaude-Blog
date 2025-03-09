@@ -18,20 +18,20 @@ const Timestamps: React.FC<TimestampsProps> = ({ title, timestamps }) => {
       <S.Content>
         {timestamps.map((timestamp, index) => (
           <S.Timestamp key={index}>
-            <S.Date>{timestamp.date}</S.Date>
+            <S.Date>{timestamp?.date}</S.Date>
             <div>
               <S.Title>
-                <S.TitleEn>{timestamp.en}</S.TitleEn>
+                <S.TitleEn>{timestamp?.en}</S.TitleEn>
                 <S.TitleKr>
-                  {timestamp.kr}
-                  {'link' in timestamp && timestamp.link && (
-                    <a href={timestamp.link} target='_blank'>
-                      <Link2Icon className='link-icon' />
+                  {timestamp?.kr}
+                  {timestamp && 'link' in timestamp && timestamp?.link && (
+                    <a href={timestamp?.link} target="_blank">
+                      <Link2Icon className="link-icon" />
                     </a>
                   )}
                 </S.TitleKr>
               </S.Title>
-              <S.Info>{timestamp.info}</S.Info>
+              <S.Info>{timestamp?.info}</S.Info>
             </div>
           </S.Timestamp>
         ))}

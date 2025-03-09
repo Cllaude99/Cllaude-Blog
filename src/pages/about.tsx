@@ -20,6 +20,7 @@ const About: React.FC<AboutProps> = ({ location, data }) => {
   const { author, timestamps } = metaData;
 
   const stamps = timestamps.reduce((acc, cur) => {
+    if (!cur?.category) return acc; // Skip items with no category
     return {
       ...acc,
       [cur.category]: [...(acc[cur.category] || []), cur],
