@@ -64,7 +64,7 @@ export default {
     {
       category: 'Career',
       date: '2024.08.11 - 2024.11.11',
-      en: 'Daangn',
+      en: 'Daangn.',
       kr: '당근(인턴)',
       info: 'SummerTech Internship',
       link: '',
@@ -72,7 +72,7 @@ export default {
     {
       category: 'Activity',
       date: '2024.08.19 - 2024.12.06',
-      en: 'Naver Boostcamp',
+      en: 'Naver Boostcamp.',
       kr: '네이버 부스트캠프',
       info: '부스트캠프 9기',
       link: 'https://boostcamp.connect.or.kr/',
@@ -80,7 +80,7 @@ export default {
     {
       category: 'Activity',
       date: '2023.09 - 2024.09',
-      en: 'Cotato',
+      en: 'Cotato.',
       kr: '코테이토',
       info: 'IT 동아리',
       link: 'https://www.cotato.kr/',
