@@ -31,8 +31,8 @@ export default {
     },
     social: {
       github: `https://github.com/Cllaude99`,
-      linkedIn: `https://github.com/Cllaude99`,
-      resume: `https://github.com/Cllaude99`,
+      linkedIn: `https://www.linkedin.com/in/%ED%83%9C%EC%9C%A4-%EA%B9%80-a94635301/`,
+      resume: `https://www.figma.com/design/ECIxHfNqXzkvm2TPPL3WSB/%EA%B9%80%ED%83%9C%EC%9C%A4-%EC%9D%B4%EB%A0%A5%EC%84%9C?node-id=0-1&t=YuzXOzTZz08GcqY4-1`,
     },
     dropdown: {
       velog: 'https://velog.io/@cllaude/posts',
