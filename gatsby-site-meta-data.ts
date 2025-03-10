@@ -71,7 +71,7 @@ export default {
     },
     {
       category: 'Activity',
-      date: '2024.08.19 - 2024.12.06',
+      date: '2024.06.24 - 2024.12.06',
       en: 'Naver Boostcamp.',
       kr: '네이버 부스트캠프',
       info: '부스트캠프 9기',
