@@ -23,7 +23,7 @@ export default {
   author: {
     name: `김태윤`,
     nickname: `Cllaude`,
-    stack: ['Frontend', 'React', 'Typescript'],
+    stack: ['Frontend', 'React', 'TypeScript'],
     bio: {
       email: `cllaude1025@gmail.com`,
       residence: 'Seoul, South Korea',
