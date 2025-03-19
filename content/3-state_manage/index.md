@@ -563,4 +563,5 @@ export default function JotaiMovieList({ type }) {
 ### 레퍼런스
 
 > [Flux Overview](https://haruair.github.io/flux/docs/overview.html)
+
 > [Zustand & Jotai 비교](https://programming119.tistory.com/263)
