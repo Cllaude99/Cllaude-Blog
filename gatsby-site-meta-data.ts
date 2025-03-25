@@ -71,6 +71,22 @@ export default {
     },
     {
       category: 'Activity',
+      date: '2025.03 - ',
+      en: 'Farm System',
+      kr: 'Farm System 보안/웹',
+      info: '교내 자율 학습 동아리',
+      link: 'https://www.farmsystem.kr/',
+    },
+    {
+      category: 'Activity',
+      date: '2025.03 - ',
+      en: '9roomthon Univ',
+      kr: '9roomthon Univ',
+      info: 'IT 연합 동아리',
+      link: 'https://9oormthon.university/',
+    },
+    {
+      category: 'Activity',
       date: '2024.06.24 - 2024.12.06',
       en: 'Naver Boostcamp.',
       kr: '네이버 부스트캠프',
