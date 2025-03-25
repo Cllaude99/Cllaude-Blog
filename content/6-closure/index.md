@@ -5,11 +5,11 @@ date: '2025-03-25'
 categories: featured-Dev
 ---
 
-![](js.webp)
+<img src="js.webp" alt="js" width="100%" />
 
 평소처럼 velog의 트렌딩 글 목록들을 보던 중, React의 useState와 관련된 글을 보았다. 해당 글에서는 ReactHooks, ReactFiberHooks 등의 코드를 통해 useState의 내부 동작을 설명하고 있었으며 useState가 클로저로 구현되어 있음을 설명하고 있었다.
 
-> 나는 이 글을 보며 useState를 사용하며 코드를 짰던 스스로를 돌아보는 계기가 되었다.
+> 나는 이 글을 보며 useState를 사용하며 코드를 짰던 지난 과정이 부끄러워 졌다.
 
 그 이유는 closure의 개념이 useState에 어떻게 적용되어 있는지도 모른채 useState를 사용하고 있었기 때문이다. (내가 작성한 코드에 대해 나도 잘 모르고, 이에 대해 설명할 수 없다는 것은 정말 부끄러운 일인 것 같다 ㅠㅠ)
 
