@@ -6,6 +6,7 @@ categories: featured-Dev
 ---
 
 <img src="js.webp" alt="js" width="100%" />
+
 <br/>
 
 평소처럼 velog의 트렌딩 글 목록들을 보던 중, React의 useState와 관련된 글을 보았다. 해당 글에서는 ReactHooks, ReactFiberHooks 등의 코드를 통해 useState의 내부 동작을 설명하고 있었으며 useState가 클로저로 구현되어 있음을 설명하고 있었다.
