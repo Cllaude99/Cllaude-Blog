@@ -6,6 +6,7 @@ categories: featured-Dev
 ---
 
 <img src="./js.webp" alt="js" style="width: 100%;" />
+<br/>
 
 [mdn](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)에 따르면 JavaScript 호이스팅은 인터프리터가 코드를 실행하기 전에 함수, 변수, 클래스 또는 임포트(import)의 선언문을 해당 범위의 맨 위로 끌어올리는 것처럼 보이는 현상을 말한다. 이는 변수나 함수가 실제 코드에서 작성된 위치와 관계없이 선언 단계에서 메모리에 저장되기 때문에 발생한다.
 
