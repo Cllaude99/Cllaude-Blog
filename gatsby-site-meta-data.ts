@@ -147,6 +147,19 @@ export default {
         appStore: '',
       },
     },
+    {
+      title: 'Flow Bit',
+      description: 'AI모델을 통해 비트코인 가격을 예측하는 서비스',
+      techStack: ['React', 'TS'],
+      thumbnailUrl: 'flow-bit.png', // Path to your in the 'assets' folder
+      links: {
+        post: '',
+        github: 'https://github.com/flowbit-team',
+        demo: '',
+        googlePlay: '',
+        appStore: '',
+      },
+    },
   ],
 
   /**
