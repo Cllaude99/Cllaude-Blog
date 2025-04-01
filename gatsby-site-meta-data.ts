@@ -71,7 +71,7 @@ export default {
     },
     {
       category: 'Activity',
-      date: '2025.03 ~ ',
+      date: '2025.03 ~',
       en: 'Farm System',
       kr: 'Farm System 보안/웹',
       info: '교내 자율 학습 동아리',
