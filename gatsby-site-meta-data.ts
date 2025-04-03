@@ -79,7 +79,7 @@ export default {
     },
     {
       category: 'Activity',
-      date: '2025.03 ~',
+      date: '2025.03 ~ ',
       en: '9roomthon Univ',
       kr: '9roomthon Univ',
       info: 'IT 연합 동아리',
