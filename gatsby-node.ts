@@ -4,7 +4,10 @@ import path from 'path';
 
 import { AllMarkdownRemark } from './src/type';
 
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ getConfig, actions }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  getConfig,
+  actions,
+}) => {
   const output = getConfig().output || {};
 
   actions.setWebpackConfig({
@@ -28,8 +31,8 @@ const createPosts = ({ createPage, edges }: CreatePagesFuncProps) => {
   const categorySet: Set<string> = new Set();
 
   const edgesWithMap = edges.map((edge) => {
-    const { categories } = edge.node.frontmatter;
-    const categoriesArr = categories.split(' ');
+    const { categories = '' } = edge.node.frontmatter;
+    const categoriesArr = categories ? categories.split(' ') : [];
     const categoriesMap = categoriesArr.reduce((acc, category) => {
       acc[category] = true;
       return acc;
@@ -46,7 +49,10 @@ const createPosts = ({ createPage, edges }: CreatePagesFuncProps) => {
     });
   });
 
-  const categories = ['All', ...[...categorySet].sort((a, b) => a.localeCompare(b))];
+  const categories = [
+    'All',
+    ...[...categorySet].sort((a, b) => a.localeCompare(b)),
+  ];
 
   createPage({
     path: `/posts`,
@@ -61,7 +67,9 @@ const createPosts = ({ createPage, edges }: CreatePagesFuncProps) => {
       context: {
         currentCategory,
         categories,
-        edges: edgesWithMap.filter((edge) => edge.categoriesMap[currentCategory]),
+        edges: edgesWithMap.filter(
+          (edge) => edge.categoriesMap[currentCategory]
+        ),
       },
     });
   });
@@ -84,7 +92,11 @@ const createPost = ({ createPage, edges }: CreatePagesFuncProps) => {
   });
 };
 
-export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
+export const createPages: GatsbyNode['createPages'] = async ({
+  graphql,
+  actions,
+  reporter,
+}) => {
   const { createPage } = actions;
 
   // Get all markdown blog posts sorted by date
@@ -96,7 +108,10 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
     };
   } = await graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             id
@@ -126,19 +141,24 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   `);
 
   if (result.errors || !result.data) {
-    reporter.panicOnBuild(`There was an error loading your blog posts`, result.errors);
+    reporter.panicOnBuild(
+      `There was an error loading your blog posts`,
+      result.errors
+    );
     return;
   }
 
   const filteredEdges = result.data.allMarkdownRemark.edges.map((edge) => {
-    const { categories } = edge.node.frontmatter;
-    const categoriesArr = categories.split(' ');
+    const { categories = '' } = edge.node.frontmatter;
+    const categoriesArr = categories ? categories.split(' ') : [];
 
     const categorySet: Set<string> = new Set();
 
     categoriesArr.forEach((category) => {
       const categoryName = category.replace('featured-', '').trim();
-      categorySet.add(categoryName);
+      if (categoryName) {
+        categorySet.add(categoryName);
+      }
     });
 
     return {
@@ -147,7 +167,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
         ...edge.node,
         frontmatter: {
           ...edge.node.frontmatter,
-          categories: [...categorySet].sort((a, b) => a.localeCompare(b)).join(' '),
+          categories:
+            [...categorySet].sort((a, b) => a.localeCompare(b)).join(' ') ||
+            'Uncategorized',
         },
       },
     };
@@ -157,7 +179,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions,
   createPost({ createPage, edges: filteredEdges });
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({
+  node,
+  actions,
+  getNode,
+}) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
