@@ -26,26 +26,14 @@ export const Wrapper = styled.div`
   font-family: GmarketSansLight;
 
   .react-rotating-text-cursor {
-    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
+      infinite;
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
     padding: 0 10px;
     margin-top: 80px;
     margin-bottom: 150px;
-  }
-
-  .gatsby-image-wrapper {
-    position: absolute;
-    right: 30px;
-    top: -100px;
-    width: 300px;
-    @media ${MOBILE_MEDIA_QUERY} {
-      position: absolute;
-      right: 0;
-      top: -20px;
-      width: 100px;
-    }
   }
 `;
 
@@ -75,7 +63,8 @@ export const IntroWrapper = styled.div`
   }
 
   .react-rotating-text-cursor {
-    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
+      infinite;
   }
 `;
 
@@ -148,18 +137,5 @@ export const Dropdown = styled.div`
   @media ${MOBILE_MEDIA_QUERY} {
     left: 0px;
     align-items: flex-start;
-  }
-`;
-
-export const BuyMeACoffeeWrapper = styled.div`
-  position: absolute;
-  top: 300px;
-  left: 0;
-  z-index: 0;
-
-  @media ${MOBILE_MEDIA_QUERY} {
-    top: 270px;
-    right: 0;
-    left: auto;
   }
 `;

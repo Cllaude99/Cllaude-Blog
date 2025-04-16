@@ -3,8 +3,6 @@ import ReactRotatingText from 'react-rotating-text';
 
 import { Author } from '@/src/type';
 
-import BuyMeACoffee from '../BuyMeACoffee';
-import Image from '../Image';
 import * as S from './styled';
 
 type MainBannerProps = {
@@ -33,15 +31,18 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
           </strong>
           입니다.
         </S.Title>
-        <Image alt='thumbnail' src='thumbnail.png' />
         <S.SocialWrapper>
           {Object.keys(social).map(
             (link, index) =>
               social[link as keyof typeof social] && (
-                <S.SocialButton key={index} target='_blank' href={social[link as keyof typeof social]}>
+                <S.SocialButton
+                  key={index}
+                  target="_blank"
+                  href={social[link as keyof typeof social]}
+                >
                   {link}
                 </S.SocialButton>
-              ),
+              )
           )}
           {/* space-between을 위한 빈 div */}
           <div />
@@ -52,20 +53,20 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
                 {Object.keys(dropdown).map(
                   (link, index) =>
                     dropdown[link as keyof typeof dropdown] && (
-                      <S.SocialButton key={index} target='_blank' href={dropdown[link as keyof typeof dropdown]}>
+                      <S.SocialButton
+                        key={index}
+                        target="_blank"
+                        href={dropdown[link as keyof typeof dropdown]}
+                      >
                         {link}
                       </S.SocialButton>
-                    ),
+                    )
                 )}
               </S.Dropdown>
             )}
           </S.DropdownButton>
         </S.SocialWrapper>
       </S.IntroWrapper>
-
-      <S.BuyMeACoffeeWrapper>
-        <BuyMeACoffee />
-      </S.BuyMeACoffeeWrapper>
     </S.Wrapper>
   );
 };
