@@ -28,7 +28,7 @@ export const darkTheme: Theme = {
     gray40: '#626368',
     gray20: '#3C3D40',
     gray10: '#2C2D2E',
-    white100: '#232326',
+    white100: '#212121',
   },
 };
 

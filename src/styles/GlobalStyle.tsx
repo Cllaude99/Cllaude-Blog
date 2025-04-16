@@ -16,7 +16,7 @@ const style = (theme: Theme) => css`
     overflow-y: scroll;
     font-size: 14px;
     color: ${theme.color.black100};
-    background-color: ${theme.color.gray10};
+    background-color: ${theme.color.white100};
 
     a {
       color: ${theme.color.black100};
