@@ -5,7 +5,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { ThemeManagerContext } from 'gatsby-emotion-dark-mode';
 import { useContext } from 'react';
 
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import ThemeToggle from '../components/ThemeToggle';
 import { darkTheme, lightTheme } from '../styles/const';
@@ -40,7 +39,6 @@ const Layout: React.FC<LayoutProps> = ({ location, children }) => {
           {location && <Header location={location} title={title} />}
           <S.Content>{children}</S.Content>
         </S.ContentWrapper>
-        <Footer />
       </S.Wrapper>
     </ThemeProvider>
   );

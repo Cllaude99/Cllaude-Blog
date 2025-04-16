@@ -2,7 +2,7 @@ export default {
   /**
    * basic Information
    */
-  title: `Cllaude.com`,
+  title: `Cllaude`,
   description: `개발자 태윤`,
   language: `ko`,
   siteUrl: `https://Cllaude.com/`,
