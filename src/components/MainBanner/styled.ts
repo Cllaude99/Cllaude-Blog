@@ -88,6 +88,12 @@ export const LastLine = styled.p`
   line-height: 1.5;
 `;
 
+export const BoldText = styled.span`
+  font-family: GmarketSansMedium;
+  font-weight: 500;
+  display: inline-block;
+`;
+
 export const SocialWrapper = styled.div`
   display: flex;
   flex-direction: column;

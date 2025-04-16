@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Author } from '@/src/type';
 
@@ -16,15 +16,21 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
   const [displayText2, setDisplayText2] = useState('');
   const [showLastLine, setShowLastLine] = useState(false);
 
-  const text1 = '변화에 유연한 코드와';
-  const text2 = '사용자 관찰로 완성도를 높이는';
+  const fullText1 = '변화에 유연한 코드와';
+  const fullText2 = '사용자 관찰로 완성도를 높이는';
+
+  // 타이핑 효과를 위한 굵은 단어 부분과 일반 텍스트 부분 분리
+  const boldPart1 = '변화에 유연한';
+  const normalPart1 = ' 코드와';
+  const boldPart2 = '사용자 관찰';
+  const normalPart2 = '로 완성도를 높이는';
 
   useEffect(() => {
     // 첫 번째 라인 타이핑 효과
     let currentIndex = 0;
     const interval1 = setInterval(() => {
-      if (currentIndex <= text1.length) {
-        setDisplayText1(text1.substring(0, currentIndex));
+      if (currentIndex <= fullText1.length) {
+        setDisplayText1(fullText1.substring(0, currentIndex));
         currentIndex++;
       } else {
         clearInterval(interval1);
@@ -32,8 +38,8 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
         // 두 번째 라인 타이핑 효과 시작
         let secondIndex = 0;
         const interval2 = setInterval(() => {
-          if (secondIndex <= text2.length) {
-            setDisplayText2(text2.substring(0, secondIndex));
+          if (secondIndex <= fullText2.length) {
+            setDisplayText2(fullText2.substring(0, secondIndex));
             secondIndex++;
           } else {
             clearInterval(interval2);
@@ -51,14 +57,70 @@ const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
     };
   }, []);
 
+  // 굵은 텍스트를 처음부터 적용하는 함수
+  const renderFirstLine = () => {
+    const currentTextLength = displayText1.length;
+
+    if (currentTextLength === 0) return null;
+
+    // boldPart1의 표시할 길이 계산
+    const boldLength = Math.min(currentTextLength, boldPart1.length);
+    const boldText = boldPart1.substring(0, boldLength);
+
+    // 나머지 일반 텍스트 부분 계산
+    let normalText = '';
+    if (currentTextLength > boldPart1.length) {
+      normalText = normalPart1.substring(
+        0,
+        currentTextLength - boldPart1.length
+      );
+    }
+
+    return (
+      <>
+        <S.BoldText>{boldText}</S.BoldText>
+        {normalText}
+      </>
+    );
+  };
+
+  // 두 번째 줄을 위한 함수
+  const renderSecondLine = () => {
+    const currentTextLength = displayText2.length;
+
+    if (currentTextLength === 0) return null;
+
+    // boldPart2의 표시할 길이 계산
+    const boldLength = Math.min(currentTextLength, boldPart2.length);
+    const boldText = boldPart2.substring(0, boldLength);
+
+    // 나머지 일반 텍스트 부분 계산
+    let normalText = '';
+    if (currentTextLength > boldPart2.length) {
+      normalText = normalPart2.substring(
+        0,
+        currentTextLength - boldPart2.length
+      );
+    }
+
+    return (
+      <>
+        <S.BoldText>{boldText}</S.BoldText>
+        {normalText}
+      </>
+    );
+  };
+
   return (
     <S.Wrapper>
       <S.IntroWrapper>
         <S.Title>
-          <S.TypingLine>{displayText1}</S.TypingLine>
-          <S.TypingLine>{displayText2}</S.TypingLine>
+          <S.TypingLine>{renderFirstLine()}</S.TypingLine>
+          <S.TypingLine>{renderSecondLine()}</S.TypingLine>
           {showLastLine && (
-            <S.LastLine className="fade-in">개발자 김태윤 입니다.</S.LastLine>
+            <S.LastLine className="fade-in">
+              개발자 <S.BoldText>김태윤</S.BoldText> 입니다.
+            </S.LastLine>
           )}
         </S.Title>
         <S.SocialWrapper>
