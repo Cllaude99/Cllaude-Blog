@@ -1,7 +1,7 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { hoverUnderline, MOBILE_MEDIA_QUERY } from '@/src/styles/const';
+import { MOBILE_MEDIA_QUERY } from '@/src/styles/const';
 
 const blinkingCursor = keyframes`
   0% {
@@ -91,6 +91,7 @@ export const SocialWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 10px;
 
   @media ${MOBILE_MEDIA_QUERY} {
     flex-direction: row;
@@ -104,7 +105,17 @@ export const SocialWrapper = styled.div`
 export const SocialButton = styled.a`
   color: ${({ theme }) => theme.color.black100};
   font-size: 18px;
-  ${({ theme }) => hoverUnderline(theme)};
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.color.black100};
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.black100};
+    color: ${({ theme }) => theme.color.white100};
+  }
 `;
 
 export const DropdownButton = styled.div`
@@ -115,7 +126,15 @@ export const DropdownButton = styled.div`
   bottom: -100px;
   & > div:first-of-type {
     cursor: pointer;
-    ${({ theme }) => hoverUnderline(theme)};
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid ${({ theme }) => theme.color.black100};
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.color.black100};
+      color: ${({ theme }) => theme.color.white100};
+    }
   }
   @media ${MOBILE_MEDIA_QUERY} {
     left: 0px;
@@ -127,10 +146,10 @@ export const DropdownButton = styled.div`
 export const Dropdown = styled.div`
   margin-top: 5px;
   position: absolute;
-  gap: 2px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
-  top: 25px;
+  top: 45px;
   right: 0;
   align-items: flex-end;
   z-index: 30;
