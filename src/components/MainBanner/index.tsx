@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import ReactRotatingText from 'react-rotating-text';
+import { useEffect, useState } from 'react';
 
 import { Author } from '@/src/type';
 
@@ -10,26 +9,57 @@ type MainBannerProps = {
 };
 
 const MainBanner: React.FC<MainBannerProps> = ({ author }) => {
-  const { stack, social, name, nickname, dropdown } = author;
+  const { social, dropdown } = author;
 
   const [isDropdownOpened, setIsDropdownOpened] = useState(false);
+  const [displayText1, setDisplayText1] = useState('');
+  const [displayText2, setDisplayText2] = useState('');
+  const [showLastLine, setShowLastLine] = useState(false);
+
+  const text1 = '변화에 유연한 코드와';
+  const text2 = '사용자 관찰로 완성도를 높이는';
+
+  useEffect(() => {
+    // 첫 번째 라인 타이핑 효과
+    let currentIndex = 0;
+    const interval1 = setInterval(() => {
+      if (currentIndex <= text1.length) {
+        setDisplayText1(text1.substring(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval1);
+
+        // 두 번째 라인 타이핑 효과 시작
+        let secondIndex = 0;
+        const interval2 = setInterval(() => {
+          if (secondIndex <= text2.length) {
+            setDisplayText2(text2.substring(0, secondIndex));
+            secondIndex++;
+          } else {
+            clearInterval(interval2);
+            // 마지막 라인 페이드인 효과
+            setTimeout(() => {
+              setShowLastLine(true);
+            }, 300);
+          }
+        }, 50);
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(interval1);
+    };
+  }, []);
 
   return (
     <S.Wrapper>
       <S.IntroWrapper>
         <S.Title>
-          안녕하세요!
-          <br />
-          <strong>
-            <ReactRotatingText items={stack} />
-          </strong>
-          <span>를 좋아하는</span>
-          <br />
-          개발자{' '}
-          <strong>
-            <ReactRotatingText items={[name, nickname]} />
-          </strong>
-          입니다.
+          <S.TypingLine>{displayText1}</S.TypingLine>
+          <S.TypingLine>{displayText2}</S.TypingLine>
+          {showLastLine && (
+            <S.LastLine className="fade-in">개발자 김태윤 입니다.</S.LastLine>
+          )}
         </S.Title>
         <S.SocialWrapper>
           {Object.keys(social).map(

@@ -7,26 +7,37 @@ const style = (theme: Theme) => css`
   * {
     box-sizing: border-box;
     appearance: none;
+    margin: 0;
+    padding: 0;
   }
 
-  html {
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
     font-family: 'GmarketSansMedium';
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
     font-size: 14px;
     color: ${theme.color.black100};
     background-color: ${theme.color.white100};
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
 
-    a {
-      color: ${theme.color.black100};
-      text-decoration: none;
-    }
+  html {
+    overflow-y: scroll;
   }
 
   body {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  a {
+    color: ${theme.color.black100};
+    text-decoration: none;
   }
 
   ::-webkit-scrollbar {

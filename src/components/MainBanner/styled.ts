@@ -3,16 +3,22 @@ import styled from '@emotion/styled';
 
 import { MOBILE_MEDIA_QUERY } from '@/src/styles/const';
 
-const blinkingCursor = keyframes`
+const fadeIn = keyframes`
   0% {
     opacity: 0;
+    transform: translateY(10px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
-  50% {
+const blink = keyframes`
+  0%, 100% {
     opacity: 1;
   }
-
-  100% {
+  50% {
     opacity: 0;
   }
 `;
@@ -25,9 +31,8 @@ export const Wrapper = styled.div`
   margin: 130px 0;
   font-family: GmarketSansLight;
 
-  .react-rotating-text-cursor {
-    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
-      infinite;
+  .fade-in {
+    animation: ${fadeIn} 1.5s ease-out forwards;
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
@@ -38,12 +43,12 @@ export const Wrapper = styled.div`
 `;
 
 export const IntroWrapper = styled.div`
-  white-space: nowrap;
+  white-space: normal;
   display: flex;
   justify-content: space-between;
   position: relative;
   font-size: 40px;
-  line-height: 1.2;
+  line-height: 1.4;
 
   @media ${MOBILE_MEDIA_QUERY} {
     flex-direction: column;
@@ -52,38 +57,35 @@ export const IntroWrapper = styled.div`
   strong {
     display: inline-block;
     font-family: GmarketSansMedium;
-    .react-rotating-text-cursor {
-      font-family: GmarketSansLight;
-      font-size: 40px;
-
-      @media ${MOBILE_MEDIA_QUERY} {
-        font-size: 27px;
-      }
-    }
-  }
-
-  .react-rotating-text-cursor {
-    animation: ${blinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s
-      infinite;
   }
 `;
 
-export const Title = styled.p`
+export const Title = styled.div`
   width: 100%;
-
-  .react-rotating-text-cursor {
-    font-size: 50px;
-    line-height: 35px;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
 
   @media ${MOBILE_MEDIA_QUERY} {
     font-size: 27px;
-
-    .react-rotating-text-cursor {
-      font-size: 27px;
-      line-height: 27px;
-    }
+    min-height: 120px;
   }
+`;
+
+export const TypingLine = styled.p`
+  margin: 0;
+  line-height: 1.5;
+  position: relative;
+
+  &::after {
+    content: '|';
+    animation: ${blink} 1s infinite;
+  }
+`;
+
+export const LastLine = styled.p`
+  margin: 0;
+  line-height: 1.5;
 `;
 
 export const SocialWrapper = styled.div`
