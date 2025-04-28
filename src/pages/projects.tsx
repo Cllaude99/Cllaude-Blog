@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectsProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Seo title="개발자 태윤 | Projects" />
+      <Seo title="태윤 블로그 | Projects" />
       <Title>Projects</Title>
       <ProjectCardsWrapper>
         {projects.map((project, index) => (

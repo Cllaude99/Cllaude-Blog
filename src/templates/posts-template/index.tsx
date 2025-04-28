@@ -18,12 +18,15 @@ type PostsTemplateProps = {
   };
 };
 
-const PostsTemplate: React.FC<PostsTemplateProps> = ({ location, pageContext }) => {
+const PostsTemplate: React.FC<PostsTemplateProps> = ({
+  location,
+  pageContext,
+}) => {
   const { edges, currentCategory } = pageContext;
   const { categories } = pageContext;
   const currentTabIndex = useMemo(
     () => categories.findIndex((category) => category === currentCategory),
-    [categories, currentCategory],
+    [categories, currentCategory]
   );
   const posts = edges.map(({ node }) => new PostClass(node));
 
@@ -38,15 +41,21 @@ const PostsTemplate: React.FC<PostsTemplateProps> = ({ location, pageContext }) 
   useEffect(() => {
     if (!ref.current) return;
     const currentTab = ref.current.children[currentTabIndex] as HTMLDivElement;
-    ref.current.scrollTo({ left: currentTab.offsetLeft - (ref.current.offsetWidth - currentTab.offsetWidth) / 2 });
+    ref.current.scrollTo({
+      left:
+        currentTab.offsetLeft -
+        (ref.current.offsetWidth - currentTab.offsetWidth) / 2,
+    });
   }, []);
 
   return (
     <Layout location={location}>
-      <Seo title='개발자 태윤 | Posts' />
+      <Seo title="태윤 블로그 | Posts" />
       <S.CategoryWrapper>
         <S.CategoryTitle>{categories[currentTabIndex]}</S.CategoryTitle>
-        <S.CategorySubtitle>{`${posts.length} post${posts.length < 2 ? '' : 's'}`}</S.CategorySubtitle>
+        <S.CategorySubtitle>{`${posts.length} post${
+          posts.length < 2 ? '' : 's'
+        }`}</S.CategorySubtitle>
       </S.CategoryWrapper>
 
       <S.TabWrapper>
