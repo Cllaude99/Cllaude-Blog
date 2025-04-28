@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import { contentMaxWidth, hoverUnderline, MOBILE_MEDIA_QUERY } from '@/src/styles/const';
+import { contentMaxWidth, MOBILE_MEDIA_QUERY } from '@/src/styles/const';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -53,20 +53,32 @@ export const Menu = styled.div`
 
 export const MenuLink = styled(Link)<{ isselected: string }>`
   font-size: 17px;
-  ${({ theme }) => hoverUnderline(theme)};
-  &:after {
-    height: 2px;
-    bottom: -2px;
-    transform: ${({ isselected }) => (isselected === 'true' ? 'scaleX(1)' : 'scaleX(0)')};
-  }
+  transition: transform 0.25s ease-out, font-size 0.25s ease-out;
 
-  &:hover:after {
-    @media ${MOBILE_MEDIA_QUERY} {
-      transform: ${({ isselected }) => (isselected === 'true' ? 'scaleX(1)' : 'scaleX(0)')};
-    }
+  ${({ isselected }) =>
+    isselected === 'true' &&
+    `
+    font-size: 18px;
+    font-weight: 700;
+  `}
+
+  &:hover {
+    transform: scale(1.1);
+    font-weight: 600;
   }
 
   @media ${MOBILE_MEDIA_QUERY} {
     font-size: 13px;
+
+    ${({ isselected }) =>
+      isselected === 'true' &&
+      `
+      font-size: 14px;
+      font-weight: 700;
+    `}
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 `;
