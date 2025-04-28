@@ -3,7 +3,7 @@ export default {
    * basic Information
    */
   title: `Cllaude`,
-  description: `개발자 태윤`,
+  description: `태윤 블로그`,
   language: `ko`,
   siteUrl: `https://Cllaude.com/`,
   ogImage: `profile-image.jpeg`,
