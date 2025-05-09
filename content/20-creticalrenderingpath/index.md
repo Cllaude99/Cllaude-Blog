@@ -1,7 +1,7 @@
 ---
 emoji: 👀
 title: 'critical rendering path란?'
-date: '2025-05-06'
+date: '2025-05-09'
 categories: featured-Dev
 ---
 
