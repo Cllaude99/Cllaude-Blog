@@ -71,6 +71,14 @@ export default {
     },
     {
       category: 'Activity',
+      date: '2025.07 ~ ',
+      en: 'Nexters',
+      kr: '넥스터즈 27기',
+      info: 'IT 동아리',
+      link: 'https://nexters.co.kr/',
+    },
+    {
+      category: 'Activity',
       date: '2025.03 ~ ',
       en: 'Farm System',
       kr: 'Farm System 보안/웹',
