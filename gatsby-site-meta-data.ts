@@ -71,7 +71,7 @@ export default {
     },
     {
       category: 'Activity',
-      date: '2025.07 ~ ',
+      date: '2025.07 ~',
       en: 'Nexters',
       kr: '넥스터즈 27기',
       info: 'IT 동아리',
