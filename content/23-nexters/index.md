@@ -1,6 +1,6 @@
 ---
 emoji: 🥳
-title: 'Nexters 27기에 FE 개발자로 합격하다'
+title: 'Nexters 27기 FE 개발자로 합격하다'
 date: '2025-06-15'
 categories: featured-Experience
 ---
