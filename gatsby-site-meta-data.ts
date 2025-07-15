@@ -66,7 +66,7 @@ export default {
       date: '2024.07.21 ~ ',
       en: 'Toss.',
       kr: '토스(인턴)',
-      info: 'Frontend Developer Assistant',
+      info: '',
       link: '',
     },
     {
