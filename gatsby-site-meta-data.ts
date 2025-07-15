@@ -63,6 +63,14 @@ export default {
   timestamps: [
     {
       category: 'Career',
+      date: '2024.07.21 ~ ',
+      en: 'Toss.',
+      kr: '토스(인턴)',
+      info: 'Frontend Developer Assistant',
+      link: '',
+    },
+    {
+      category: 'Career',
       date: '2024.08.11 - 2024.11.11',
       en: 'Daangn.',
       kr: '당근(인턴)',
